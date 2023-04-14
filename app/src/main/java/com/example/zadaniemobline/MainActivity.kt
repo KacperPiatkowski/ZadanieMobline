@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
             navigationView.visibility = View.GONE
         }
 
+        findViewById<ImageView>(R.id.ikonka).setOnClickListener {
+            navigationView.visibility = View.VISIBLE
+        }
+
         findViewById<Button>(R.id.strgl).setOnClickListener {
             Toast.makeText(this, "Strona główna jest już otwarta", Toast.LENGTH_SHORT).show()
         }
