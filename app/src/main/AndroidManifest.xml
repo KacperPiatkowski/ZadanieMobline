@@ -15,6 +15,9 @@
             android:name=".TabOcen"
             android:exported="false" />
         <activity
+            android:name=".frekwencja"
+            android:exported="false" />
+        <activity
             android:name=".infouztykownik"
             android:exported="false" />
         <activity

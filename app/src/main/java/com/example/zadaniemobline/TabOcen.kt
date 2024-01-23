@@ -28,8 +28,8 @@ class TabOcen : AppCompatActivity() {
             navigationView.visibility = View.VISIBLE
         }
 
-        findViewById<Button>(R.id.strgl).setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java).putExtra("Przerzucanie", tablica))
+        findViewById<Button>(R.id.frekwencja).setOnClickListener {
+            startActivity(Intent(this, frekwencja::class.java).putExtra("Przerzucanie", tablica))
         }
 
 

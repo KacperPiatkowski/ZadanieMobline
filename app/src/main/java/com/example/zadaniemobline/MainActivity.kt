@@ -1,5 +1,6 @@
 package com.example.zadaniemobline
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.*
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,8 +35,12 @@ class MainActivity : AppCompatActivity() {
             navigationView.visibility = View.VISIBLE
         }
 
-        findViewById<Button>(R.id.strgl).setOnClickListener {
-            Toast.makeText(this, "Strona główna jest już otwarta", Toast.LENGTH_SHORT).show()
+        findViewById<Button>(R.id.frekwencja).setOnClickListener {
+            if(zalogowano==true)
+                startActivity(Intent(this, frekwencja::class.java).putExtra("Przerzucanie", tablica))
+            else
+                Toast.makeText(this, "Musisz się zalogować", Toast.LENGTH_SHORT).show()
+
         }
 
 
@@ -48,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.inf).setOnClickListener {
             if(zalogowano==true)
-                startActivity(Intent(this,infouztykownik::class.java).putExtra("Przerzucanie", tablica))
+                startActivity(Intent(this, infouztykownik::class.java).putExtra("Przerzucanie", tablica))
             else
                 Toast.makeText(this, "Musisz się zalogować", Toast.LENGTH_SHORT).show()
 
@@ -61,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
             if (imie.isEmpty() || nazwisko.isEmpty() || klasa.isEmpty() || nick.isEmpty())
                 Toast.makeText(this, "Wypełnij wszystkie pola", Toast.LENGTH_SHORT).show()
-            else if (imie!="Kacper" || nazwisko!="Piatkowski")
+            else if (imie!="Kacper" || nazwisko!="Piatkowski" || klasa != "3pr" || nick != "KacperPiatkowski")
                 Toast.makeText(this, "Niepoprawne dane", Toast.LENGTH_SHORT).show()
             else {
                 zalogowano = true
@@ -70,9 +76,9 @@ class MainActivity : AppCompatActivity() {
                 tablica[2] = klasa
                 tablica[3] = nick
 
-                findViewById<LinearLayout>(R.id.Formularz).visibility= View.GONE
-
                 Toast.makeText(this, "Zalogowano!", Toast.LENGTH_SHORT).show()
+
+                startActivity(Intent(this, TabOcen::class.java).putExtra("Przerzucanie", tablica));
 
             }
         }

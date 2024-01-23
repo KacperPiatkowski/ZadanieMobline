@@ -1,4 +1,4 @@
-package com.example.zadaniemobline
+package com.example .zadaniemobline
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 
-class infouztykownik : AppCompatActivity() {
 
+class frekwencja : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_infouztykownik)
+        setContentView(R.layout.activity_frekwencja)
 
         val tablica = intent.getStringArrayExtra("Przerzucanie")
 
@@ -31,7 +30,7 @@ class infouztykownik : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.frekwencja).setOnClickListener {
-            startActivity(Intent(this,frekwencja::class.java).putExtra("Przerzucanie", tablica))
+            startActivity(Intent(this, frekwencja::class.java).putExtra("Przerzucanie", tablica))
         }
 
 
@@ -41,12 +40,7 @@ class infouztykownik : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.inf).setOnClickListener {
-            Toast.makeText(this, "Informacja jest już otwarta", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,infouztykownik::class.java).putExtra("Przerzucanie", tablica))
         }
-
-        findViewById<TextView>(R.id.imieid).text = tablica?.get(0)
-        findViewById<TextView>(R.id.nazwiskoid).text = tablica?.get(1)
-        findViewById<TextView>(R.id.klasaid).text = "Klasa: " + tablica?.get(2)
-        findViewById<TextView>(R.id.nickid).text = "Nick: " + tablica?.get(3)
     }
 }

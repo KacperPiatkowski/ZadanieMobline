@@ -87,12 +87,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/strgl"
+            android:id="@+id/frekwencja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="100dp"
-            android:text="Strona główna"
+            android:text="FREKWENCJA"
             app:cornerRadius="20dp" />
 
 
@@ -228,7 +228,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="WYSLIJ"
+            android:text="ZALOGUJ"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
