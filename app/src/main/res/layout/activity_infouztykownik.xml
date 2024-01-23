@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="100dp"
-            android:text="Strona główna"
+            android:text="FREKWENCJA"
             app:cornerRadius="20dp" />
 
 
@@ -97,6 +97,14 @@
             android:layout_marginBottom="20dp"
             android:text="Wyjdź"
             app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/wyloguj"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="70dp"
+            android:text="WYLOGUJ" />
 
     </com.google.android.material.navigation.NavigationView>
 
@@ -130,6 +138,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="209dp"
         android:layout_height="144dp"
         android:orientation="vertical"
