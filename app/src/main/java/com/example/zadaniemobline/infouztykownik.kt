@@ -30,7 +30,10 @@ class infouztykownik : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.wyloguj).setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java).putExtra("Przerzucanie", tablica))
+            startActivity(Intent(this,MainActivity::class.java))
+            supportActionBar?.hide()
+            val navigationView = findViewById<NavigationView>(R.id.nav_view)
+            navigationView.visibility = View.GONE
         }
 
         findViewById<ImageView>(R.id.ikonka).setOnClickListener {

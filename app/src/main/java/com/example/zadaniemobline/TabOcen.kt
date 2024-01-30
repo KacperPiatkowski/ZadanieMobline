@@ -1,5 +1,6 @@
 package com.example.zadaniemobline
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 
 class TabOcen : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_ocen)
@@ -21,6 +23,13 @@ class TabOcen : AppCompatActivity() {
         navigationView.visibility = View.GONE
 
         findViewById<Button>(R.id.btnwyjdz).setOnClickListener {
+            navigationView.visibility = View.GONE
+        }
+
+        findViewById<Button>(R.id.wyloguj).setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            supportActionBar?.hide()
+            val navigationView = findViewById<NavigationView>(R.id.nav_view)
             navigationView.visibility = View.GONE
         }
 

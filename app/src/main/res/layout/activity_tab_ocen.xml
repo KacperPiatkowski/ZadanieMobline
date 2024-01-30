@@ -203,6 +203,14 @@
             app:cornerRadius="20dp" />
 
         <Button
+            android:id="@+id/wyloguj"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="70dp"
+            android:text="WYLOGUJ" />
+
+        <Button
             android:id="@+id/btnwyjdz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

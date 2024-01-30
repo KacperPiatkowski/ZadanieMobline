@@ -15,7 +15,7 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,8 +44,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="vertical"
-            android:gravity="center_horizontal|center_vertical">
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="65dp"
@@ -64,6 +64,7 @@
                         android:layout_height="65dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ikonka" />
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -114,6 +115,14 @@
             android:text="Informacja o użytkowniku"
             app:cornerRadius="20dp" />
 
+        <Switch
+            android:id="@+id/SwitchTheme"
+            android:layout_width="158dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="70dp"
+            android:text="Motyw" />
+
         <Button
             android:id="@+id/btnwyjdz"
             android:layout_width="match_parent"
@@ -126,17 +135,6 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zalogowano!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.349" />
 
     <LinearLayout
         android:id="@+id/Formularz"
@@ -164,7 +162,8 @@
                 android:id="@+id/imie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Imie" />
+                android:hint="Imie"
+                tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -182,7 +181,8 @@
                 android:id="@+id/nazwisko"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nazwisko" />
+                android:hint="Nazwisko"
+                tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -200,7 +200,8 @@
                 android:id="@+id/klasa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Klasa" />
+                android:hint="Klasa"
+                tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -219,7 +220,8 @@
                 android:id="@+id/nick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nick" />
+                android:hint="Nick"
+                tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

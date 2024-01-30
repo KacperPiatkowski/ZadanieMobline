@@ -1,14 +1,19 @@
 package com.example.zadaniemobline
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Musisz się zalogować", Toast.LENGTH_SHORT).show()
 
         }
-        findViewById<Button>(R.id.wyslij).setOnClickListener{
+        findViewById<Button>(R.id.wyslij).setOnClickListener {
             val imie = findViewById<EditText>(R.id.imie).text.toString()
             val nazwisko = findViewById<EditText>(R.id.nazwisko).text.toString()
             val klasa = findViewById<EditText>(R.id.klasa).text.toString()
@@ -67,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
             if (imie.isEmpty() || nazwisko.isEmpty() || klasa.isEmpty() || nick.isEmpty())
                 Toast.makeText(this, "Wypełnij wszystkie pola", Toast.LENGTH_SHORT).show()
-            else if (imie!="Kacper" || nazwisko!="Piatkowski" || klasa != "3pr" || nick != "KacperPiatkowski")
+            else if (imie != "Kacper" || nazwisko != "Piatkowski" || klasa != "3pr" || nick != "KacperPiatkowski")
                 Toast.makeText(this, "Niepoprawne dane", Toast.LENGTH_SHORT).show()
             else {
                 zalogowano = true
@@ -76,11 +81,17 @@ class MainActivity : AppCompatActivity() {
                 tablica[2] = klasa
                 tablica[3] = nick
 
-                Toast.makeText(this, "Zalogowano!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
 
                 startActivity(Intent(this, TabOcen::class.java).putExtra("Przerzucanie", tablica));
 
             }
+        }
+        findViewById<Switch>(R.id.SwitchTheme).setOnCheckedChangeListener { _, isChecked ->
+            AppCompatDelegate.setDefaultNightMode(
+                if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
+                else AppCompatDelegate.MODE_NIGHT_NO
+            )
         }
     }
 }
